@@ -15,6 +15,10 @@ def get_weights(n: int) -> list:
 
 class DeepSuprDiceCELoss:
 
+    '''
+    This loss is suitable for use with monai.networks.DynUNet when deep supervision is turned on.
+    '''
+
     def __init__(
         self,
         include_background: bool = True,
