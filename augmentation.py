@@ -178,8 +178,7 @@ class Mirroring(tio.transforms.Transform):
 
     def __init__(self, p: float = 1.0):
         super().__init__(p=p)
-        T_list = [tio.transforms.RandomFlip(axes=i, flip_probability=0.5) for i in range(3)]
-        self.T = tio.transforms.Compose(T_list)
+        self.T = tio.transforms.RandomFlip(axes=(0,1,2), flip_probability=0.5)
 
     def apply_transform(self, subject):
         return self.T(subject)
